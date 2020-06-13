@@ -1,0 +1,10 @@
+@startuml
+Product <|-- ConcreteProduct
+Creator <|-- ConcreteCreator
+Creator : factoryMethod()
+Creator : anyOperation()
+ConcreteCreator : factoryMethod()
+ConcreteProduct <.. ConcreteCreator
+note right of Creator : anyOperation(): {\nproduct = factoryMethod()\n}
+note right of ConcreteCreator: return new ConcreteProduct
+@enduml
