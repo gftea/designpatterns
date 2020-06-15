@@ -1,0 +1,14 @@
+@startuml
+together {
+    class Builder
+    class ConcreteBuilder
+}
+Director o-- Builder : builder
+Builder <|-- ConcreteBuilder
+ConcreteBuilder ..> Product 
+Director : construct()
+Builder : buildPart()
+ConcreteBuilder : buildPart()
+ConcreteBuilder : getResult()
+note bottom of Director : for all objects in structure \n {builder->buildPart()}
+@enduml

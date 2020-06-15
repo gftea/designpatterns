@@ -1,0 +1,15 @@
+@startuml
+activate aClient
+aClient --> aConcreteBuilder : new ConcreteBuilder
+activate aConcreteBuilder
+
+aClient --> aDirector : new Director(aConcreteBuilder)
+activate aDirector
+
+aClient -> aDirector : construct()
+aDirector -> aConcreteBuilder : buildPartA()
+aDirector -> aConcreteBuilder : buildPartB()
+aDirector -> aConcreteBuilder : buildPartC()
+aClient -> aConcreteBuilder : getResult()
+
+@enduml
